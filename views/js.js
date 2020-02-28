@@ -6,7 +6,9 @@ $(document).ready(function(){
   $("button#post").click(function(){
     console.log("clicked");
     var msg = $("input#message").val()+ " -"+user;
+    if($("input#message").val()==""){return}
     socket.emit("message",msg);
+    $("input#message").val("");
   });
   //post new messages
 socket.on("msg", function(msg){
@@ -16,4 +18,13 @@ socket.on("msg", function(msg){
       console.log(name);
       $("ul#messages").append("<li> new user: "+name+"</li>");
     });
+    $(document).on('keypress',function(e) {
+    if(e.which == 13) {
+      console.log("clicked");
+      var msg = $("input#message").val()+ " -"+user;
+      if($("input#message").val()==""){return}
+      socket.emit("message",msg);
+      $("input#message").val("");
+    }
+});
 });
