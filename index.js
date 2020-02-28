@@ -14,6 +14,11 @@ io.on('connection', function (socket) {
     socket.broadcast.emit("msg",message)
     socket.emit("msg",message)
   });
+  //run when someone joins
+  socket.on("new_user", function(user){
+      var name = sanitize(user)
+      socket.broadcast.emit("new_connection", name )
+  });
 });
 //sanitize text to prevent xss
 function sanitize(string) {

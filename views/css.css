@@ -1,9 +1,26 @@
 body{
-  color:red;
-    background-color: gray;
+  color:black;
+  font-size: 30px;
+  background-color: teal;
+}
+div#messageBlock{
+  overflow: auto;
+  margin-bottom: 100px;
 }
 
 div#input{
-  position: sticky;
-  bottom: 10px;
+  padding: 3px;
+  position: fixed;
+  bottom: 0; width: 100%;
+  border-top-style: solid;
+  border-top-width: 1px;
+}
+input#message{
+  font-size: 20px;
+}
+button#post{
+  font-size: 20px;
+  border-radius: 12px;
+  background-color:black;
+  color:white;
 }
