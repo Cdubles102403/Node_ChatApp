@@ -1,3 +1,9 @@
 body{
   color:red;
+    background-color: gray;
+}
+
+div#input{
+  position: sticky;
+  bottom: 10px;
 }
