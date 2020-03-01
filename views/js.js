@@ -1,5 +1,5 @@
+var currentRoom = 1;
 $(document).ready(function () {
-    var currentRoom = 1;
     var socket = io.connect('http://localhost:8080/');
     var user = prompt("Please enter your name", "name");
     if (user == "" || user == null) {
