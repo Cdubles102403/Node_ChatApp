@@ -8,11 +8,11 @@ app.use(express.static('views'))
 
 io.on('connection', function (socket) {
   console.log("user connected " + socket.id)
-  socket.on("message", function(msg){
+  socket.on("message", function(msg,room){
     message = sanitize(msg);
     console.log(socket.id+" message: "+message)
-    socket.broadcast.emit("msg",message)
-    socket.emit("msg",message)
+    socket.broadcast.emit("msg",message,room)
+    socket.emit("msg",message,room)
   });
   //run when someone joins
   socket.on("new_user", function(user){
