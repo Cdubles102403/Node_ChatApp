@@ -33,3 +33,8 @@ function sanitize(string) {
   const reg = /[&<>"'/]/ig;
   return string.replace(reg, (match)=>(map[match]));
 }
+
+//handle admin posts
+app.post("command",function(req,res){
+    console.log("request")
+})

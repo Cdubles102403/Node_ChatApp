@@ -18,7 +18,7 @@ div#input{
 input#message{
   font-size: 20px;
 }
-button#post{
+button{
   font-size: 20px;
   border-radius: 12px;
   background-color:black;

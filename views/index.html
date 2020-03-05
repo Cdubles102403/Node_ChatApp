@@ -9,17 +9,17 @@
     <link rel="stylesheet" type="text/css" href="css.css">
   </head>
   <body>
+      <div id="switches">
     <h1>Chat App</h1>
     <h4 id="room">current room number: 1</h4>
-    <div id="switches">
-      <button id="room1"   name="button" onclick="changeRoom(1);">Chat room 1</button>
-      <button id="room2"   name="button" onclick="changeRoom(2);">chat room 2</button>
-      <button id="room3"   name="button" onclick="changeRoom(3);">chat room 3</button>
+      <button id="room1" name="button" onclick="changeRoom(1);">Chat room 1</button>
+      <button id="room2" name="button" onclick="changeRoom(2);">chat room 2</button>
+      <button id="room3" name="button" onclick="changeRoom(3);">chat room 3</button>
     </div>
     <div id="messageBlock">
-      <ul id="messages">
-        <!-- messages go here-->
-      </ul>
+        <ul id="messages1"><!-- messages go here--></ul>
+        <ul id="messages2"><!-- messages go here--></ul>
+        <ul id="messages3"><!-- messages go here--></ul>
     </div>
       <div id="input">
           <input onfocus="this.value=''" type="text" id="message" value="type message here">
