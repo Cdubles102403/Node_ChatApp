@@ -4,17 +4,23 @@
     <title>Admin console</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script >
-      
-      
+        $(document).ready(function(){
+      var user, pass;
+        $("button#submit").click(function(){
+            user = $("input#user").val()
+            pass = $("input#pwd").val()
+            $.post("/command",{user: user,password: pass}, function(data){
+                console.log(data)
+            })
+        })
+      })
     </script>
   </head>
   <body>
-    <form action="index.js" method="post">
-  <label for="User">user name</label><br>
-  <input type="text" id="User"><br>
-  <label for="pwd">Password</label><br>
-  <input type="text" id="pwd"><br><br>
-  <input type="submit" value="Submit">
-</form>
+    <p>user name</p>
+    <input type="text" id="user">
+    <p>password</p>
+      <input type="password" id="pwd"> <br>
+      <button id="submit">submit</button>
   </body>
 </html>
