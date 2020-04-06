@@ -1,15 +1,14 @@
 var currentRoom = 1;
 $(document).ready(function () {
-    var socket = io.connect('http://10.217.11.52:8080/');
-    if(!localStorage.name || localStorage.name=="" || localStorage.name==null){
+    var socket = io.connect('http://192.168.1.2:8080/');
+    if(!localStorage.name || localStorage.name=="" || localStorage.name==null ){
         var user = prompt("Please enter your name", "name");
         localStorage.setItem("name",user)
     }
     else{
         var user = localStorage.getItem("name");
     }
-    
-    
+
     if (user == "" || user == null) {
         user = "anon";
     }
@@ -42,7 +41,7 @@ $(document).ready(function () {
         if(sentRoom==3){$("ul#messages3").append("<li>" + msg + "</li>");}
     });
 
-    
+
     //runs on new connection
     socket.on("new_connection", function (name) {
         console.log(name);
@@ -82,7 +81,7 @@ function changeRoom(i) {
     else if(i==3){
        $("ul#messages1").hide();
         $("ul#messages2").hide();
-        $("ul#messages3").show(); 
+        $("ul#messages3").show();
     }
-    
+
 }

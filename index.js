@@ -24,6 +24,11 @@ io.on('connection', function (socket) {
       var name = sanitize(user)
       socket.broadcast.emit("new_connection", name )
   })
+  //runs when client sends back drawn message
+  socket.on("drawn",function(pmouseX, pmouseY, mouseX, mouseY,color,size){
+    //sends draw command to all other sockets
+    socket.broadcast.emit("draw",pmouseX, pmouseY, mouseX, mouseY,color,size);
+  })
 })
 //sanitize text to prevent xss
 function sanitize(string) {
@@ -44,10 +49,12 @@ app.post("/command",function(req,res){
     //console.log("request")
     var user = req.body.user
     var pwd = req.body.password
-    
+
     console.log(user+" "+pwd)
     //succesful login
-    if(user=="admin" && pwd="password"){
-        
+    if(user=="admin" && pwd=="password"){
+      console.log("succesful login")
+      //send admin panel on succesful
+       res.sendFile(__dirname + "/private/panel.html")
     }
 })

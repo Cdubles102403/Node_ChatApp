@@ -1,7 +1,7 @@
 body{
-  color:black;
+  color:green;
   font-size: 30px;
-  background-color: teal;
+  background-color: lavender;
 }
 div#messageBlock{
   overflow: auto;
